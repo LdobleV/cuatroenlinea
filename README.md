@@ -1,64 +1,41 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# AAT - Cuatro en Linea
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+El juego de 4 en linea, se juega de a 2 y cada jugador se va tomando turnos para lanzar una bolita desde arriba del tablero, el primero jugador en formar una linea tanto diagonal, horizonal o vertical gana la partida. Este proyecto esta creado utilizando el framework de laravel y utlizando PHP.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Programas necesarios
+Para que el programa corra correctamente se va a necesitar de los siguientes 
+- DDEV (https://ddev.readthedocs.io/en/stable/)
+- Docker Desktop (https://docs.docker.com/desktop/)
+- Composer (https://getcomposer.org/download/)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<br/>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 1- Crear una carpeta
+Lo primero que vamos a hacer es crear una carpeta donde crear el 4 en linea. Para ello vamos a hacer un directorio en donde queramos y luego vamos a utilizar ``git clone https://github.com/LdobleV/cuatroenlinea``. Una vez hecho esto vamos a pasar al siguiente paso.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Docker
+Hay que tener docker abierto antes de iniciar el procedimiento porque sino da error.
 
-## Laravel Sponsors
+## 2- Iniciar DDEV
+Lo primero que vamos a hacer es abrir la consola y vamos a utilizar el comando ``cd`` para meternos en el directorio ``cuatroenlinea`` que copiamos con git.
+Primero nos va a pedir el nombre pero vamos a apretar ``enter`` para que se le asigne el nombre del directorio directamente, luego nos pide la ruta del documento raìz del proyecto, para la cual vamos apretar ``enter`` directamente para que se asigne solo, y por ultimo nos va a pedir el tipo de proyecto, para el cual vamos a establecerle ``laravel``
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 3- Composer
+Nuestro gestor de dependencias es ``Composer`` y es el que se encarga de el php de nuestro proyecto. Para ver si esta actualizado vamos a utilizar ``composer update``
 
-### Premium Partners
+## 4- Archivo de ambiente y clave de proyecto
+Aqui vamos a crear  el archivo de ambiente de nuestro proyecto, para hacerlo vamos a copiar el ejemplo en el archivo .end con ``cp .env.example .env``. Luego vamos a necesitar una clave de proyecto, la cual vamos a crear usando ``php artisan key:generate``.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## 5- Empezar la pagina
+Para hacer que la pagina empiece a correr vamos a utilizar el comando ``ddev start``, el cual al terminar nos va a tirar un link que se ve mas o menos como ``http://cuatroenlinea.ddev.site``. Si cuando entramos lo que vemos es esto, significa que todo funciona en orden y podemos empezar a jugar.
 
-## Contributing
+![Page running](https://user-images.githubusercontent.com/80189792/174674690-888302f9-bce6-4e34-aaaa-5248d503fa43.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 6- Como jugar
+Para jugar vamos a ir a, si nuestro link fuese el que especifique antes, ``http://cuatroenlinea.ddev.site/jugar/1``, una vez en la pagina, simplemente haciendo click en la parte superior del tablero y jugando por turnos segun el color de la bolita ya podemos empezar a jugar.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 7- Terminar
+Para cerrar la pagina y que deje de funcionar, solo tenemos que utilizar ``ddev stop``.
