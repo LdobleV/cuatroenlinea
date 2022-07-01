@@ -24,10 +24,10 @@ Lo primero que vamos a hacer es abrir la consola y vamos a utilizar el comando `
 Primero nos va a pedir el nombre pero vamos a apretar ``enter`` para que se le asigne el nombre del directorio directamente, luego nos pide la ruta del documento raìz del proyecto, para la cual vamos apretar ``enter`` directamente para que se asigne solo, y por ultimo nos va a pedir el tipo de proyecto, para el cual vamos a establecerle ``laravel``
 
 ## 3- Composer
-Nuestro gestor de dependencias es ``Composer`` y es el que se encarga de el php de nuestro proyecto. Para ver si esta actualizado vamos a utilizar ``composer update``
+Nuestro gestor de dependencias es ``Composer`` y es el que se encarga de el php de nuestro proyecto. Para ver si esta actualizado vamos a utilizar ``ddev composer update``
 
 ## 4- Archivo de ambiente y clave de proyecto
-Aqui vamos a crear  el archivo de ambiente de nuestro proyecto, para hacerlo vamos a copiar el ejemplo en el archivo .end con ``cp .env.example .env``. Luego vamos a necesitar una clave de proyecto, la cual vamos a crear usando ``php artisan key:generate``.
+Aqui vamos a crear  el archivo de ambiente de nuestro proyecto, para hacerlo vamos a copiar el ejemplo en el archivo .end con ``cp .env.example .env``. Luego vamos a necesitar una clave de proyecto, la cual vamos a crear usando ``ddev php artisan key:generate``.
 
 ## 5- Empezar la pagina
 Para hacer que la pagina empiece a correr vamos a utilizar el comando ``ddev start``, el cual al terminar nos va a tirar un link que se ve mas o menos como ``http://cuatroenlinea.ddev.site``. Si cuando entramos lo que vemos es esto, significa que todo funciona en orden y podemos empezar a jugar.
