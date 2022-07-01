@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ColorChangingTest extends TestCase
+class ColorChangingTestWrong extends TestCase
 {
     /**
      * Checks if the ammount of colors changes accordingly with the specified url
@@ -30,6 +30,6 @@ class ColorChangingTest extends TestCase
         $postRedColors = preg_match_all('/<div class="bg-red/', $response2->getContent());
         $postBlueColors = preg_match_all('/<div class="bg-sky/', $response2->getContent());
 
-        $this->assertTrue( ($postBlueColors == 1) && ($postRedColors == 1) );
+        $this->assertTrue( ($postBlueColors == 0) && ($postRedColors == 2) );
     }
 }
