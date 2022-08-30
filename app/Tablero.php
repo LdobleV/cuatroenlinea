@@ -3,9 +3,9 @@
 namespace App;
 
 interface tipoTablero{
-    public function throwFicha();
+    public function throwFicha(int $defX, Ficha $ficha);
     public function clearTablero();
-    public function queHay();
+    public function queHay(int $defWidth, int $defHeight);
 }
 
 class Tablero implements tipoTablero {
@@ -23,7 +23,7 @@ class Tablero implements tipoTablero {
 
     public function throwFicha(int $defX, Ficha $ficha){
         if($this->width >= $defX && columnHeight($defX) >= $this->height){
-                $this->tablero[$defX][] = $ficha;
+                array_push($this->tablero[$defX][], $ficha);
         }
     }
 

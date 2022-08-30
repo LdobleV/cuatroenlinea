@@ -13,7 +13,7 @@ class TableroTest extends TestCase
      *
      * @return void
      */
-    public function throw_piece_test() {
+    public function test_throw_piece() {
         $height = rand(6,30);
         $width = rand(6,30);
         $tablero = new Tablero($width,$height);
@@ -26,7 +26,7 @@ class TableroTest extends TestCase
         $this->assertEquals($ficha, $tablero->queHay($xThrow, 0));
     }
 
-    public function clear_board_test(){
+    public function test_clear_board(){
 
         $this->expectNotToPerformAssertions;
 
@@ -51,7 +51,7 @@ class TableroTest extends TestCase
 
     }
 
-    public function what_is_test(){
+    public function test_what_is(){
         $height = rand(6,30);
         $width = rand(6,30);
         $tablero = new Tablero($width,$height);
