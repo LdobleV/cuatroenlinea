@@ -18,12 +18,21 @@ class Tablero implements tipoTablero {
 
         $this->width = $defWidth;
         $this->height = $defHeight;
+        $this->clearTablero();
 
     }
 
     public function throwFicha(int $defX, Ficha $ficha){
-        if($this->width >= $defX && columnHeight($defX) >= $this->height){
-                array_push($this->tablero[$defX][], $ficha);
+        $found = 0;
+        if($this->width >= $defX && $this->columnHeight($defX) <= $this->height){
+            $i = 0;
+                while($found == 0 && $i < $this->height){
+                    if($this->tablero[$defX][$i] == NULL){
+                        $this->tablero[$defX][$i] = $ficha;
+                        $found = 1;
+                    }
+                    $i++;
+                }
         }
     }
 
@@ -36,11 +45,20 @@ class Tablero implements tipoTablero {
     }
     
     protected function columnHeight(int $defX){
-        return count($this->tablero[$defX]);
+        $count = 0;
+        $finish = 0;
+        for($i = 0; $i < $this->height && $finish == 0; $i++){
+            if($this->tablero[$defX][$i] != NULL){
+                $count++;
+            }else{
+                $finish = 1;
+            }
+        }
+        return $count;
     }
 
     public function queHay(int $defWidth, int $defHeight){
-        return $tablero[$defWidth][$defHeight];
+        return $this->tablero[$defWidth][$defHeight];
     }
 } 
 

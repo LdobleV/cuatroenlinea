@@ -9,40 +9,40 @@ use Tests\TestCase;
 class TableroTest extends TestCase
 {
     /**
-     * Checks if the class Ficha works accordingly with it's design
+     * Checks if the class Tablero works accordingly with it's design
      *
      * @return void
      */
     public function test_throw_piece() {
         $height = rand(6,30);
         $width = rand(6,30);
-        $tablero = new Tablero($width,$height);
+        $board = new Tablero($width,$height);
 
-        $xThrow = rand(0, $width);
+        $xThrow = rand(0, $width - 1);
         $color = rand(1,2);
         $ficha = new Ficha($color);
-        $tablero->throwFicha($xThrow, $ficha);
+        $board->throwFicha($xThrow, $ficha);
 
-        $this->assertEquals($ficha, $tablero->queHay($xThrow, 0));
+        $this->assertEquals($ficha, $board->queHay($xThrow, 0));
     }
 
     public function test_clear_board(){
 
-        $this->expectNotToPerformAssertions;
+        $this->expectNotToPerformAssertions();
 
         $height = rand(6,30);
         $width = rand(6,30);
-        $tablero = new Tablero($width,$height);
+        $board = new Tablero($width,$height);
 
-        for($i = 0; $i < 10; $i++){
-            $tablero->throwFicha(rand(0,$width), new Ficha(rand(1,2)));
+        for($i = 0; $i < 6; $i++){
+            $board->throwFicha(rand(0,$width), new Ficha(rand(1,2)));
         }
 
-        $tablero->clearTablero;
+        $board->clearTablero();
 
         for($i = 0; $i < $height; $i++){
-            for($j = 0; $j < width; $j++){
-                if($tablero->queHay($j, $i) != NULL){
+            for($j = 0; $j < $width; $j++){
+                if($board->queHay($j, $i) != NULL){
                     $this->fail("The board was not completely cleaned, one piece has been found");
                 }
             }
@@ -54,14 +54,14 @@ class TableroTest extends TestCase
     public function test_what_is(){
         $height = rand(6,30);
         $width = rand(6,30);
-        $tablero = new Tablero($width,$height);
+        $board = new Tablero($width,$height);
 
         $xThrow = rand(0, $width);
         $color = rand(1,2);
         $ficha = new Ficha($color);
-        $tablero->throwFicha($xThrow, $ficha);
+        $board->throwFicha($xThrow, $ficha);
 
-        $this->assertEquals($ficha, $tablero->queHay($xThrow, 0));
+        $this->assertEquals($ficha, $board->queHay($xThrow, 0));
     }
     
 }

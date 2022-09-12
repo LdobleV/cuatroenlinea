@@ -4,6 +4,7 @@ namespace App;
 
 interface tipoFicha {
     public function getColor();
+    public function getColorNum();
 }
 
 class Ficha implements tipoFicha {
@@ -21,6 +22,10 @@ class Ficha implements tipoFicha {
         
         }
             return 'Azul';
+    }
+
+    public function getColorNum(){
+        return $color;
     }
 }
 
